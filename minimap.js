@@ -4,6 +4,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var playerIcon;
+const debug_space = document.getElementById('debug_space');
+var locTimes = 0;
 
 map.locate({
     setView: true,
@@ -11,6 +13,7 @@ map.locate({
     enableHighAccuracy: true,
     maxZoom: 18
 }).on("locationfound", e => {
+    locTimes += 1;
     if (!playerIcon) {
         playerIcon = new L.marker(e.latlng).addTo(this.map);
     } else {
@@ -18,6 +21,7 @@ map.locate({
     }
 
     map.panTo(e.latlng);
+    debug_space.innerHTML = '#' + locTimes + ' Location';
 }).on("locationerror", error => {
     if (playerIcon) {
         map.removeLayer(playerIcon);

@@ -41,3 +41,10 @@
 #mml_longitude {
     width: 100%;
 }
+
+#debug_space {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: lightgray;
+}
