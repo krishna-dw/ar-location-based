@@ -4,7 +4,20 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var playerIcon;
+
+class RenderedMarker {
+    mapMarker;
+    constructor(latLng, isRendered = false) {
+        this.latLng = latLng;
+        this.isRendered = isRendered;
+    }
+}
+
+var markers = [new RenderedMarker(new L.latLng(-7.258388, 112.623741), true)];
+
+
 const debug_space = document.getElementById('debug_space');
+
 var locTimes = 0;
 
 map.locate({
@@ -46,4 +59,17 @@ function manualLatLong() {
         longitude: manual_long
     });
     document.querySelector("a-scene").appendChild(entity);
+
+    markers.push(new RenderedMarker(new L.latLng(manual_lat, manual_long), false));
+
+    redrawMarkers();
+}
+
+function redrawMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        if (markers[i].isRendered === false) {
+            markers[i].isRendered = true;
+            markers[i].mapMarker = new L.marker(markers[i].latLng).addTo(this.map);
+        }
+    }
 }
