@@ -1,7 +1,19 @@
-#map {
-    height: 18vh;
-    width: 18vw;
-    top: 10px;
-    right: 10px;
-    position: absolute;
+@media only screen and (orientation: landscape) {
+    #map {
+        height: 18vh;
+        width: 18vh;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    #map {
+        height: 18vw;
+        width: 18vw;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+    }
 }

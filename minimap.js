@@ -3,20 +3,24 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
 }).addTo(map);
 
-var marker;
+var playerIcon;
 
 map.locate({
     setView: true,
-    maxZoom: 19
+    watch: true,
+    enableHighAccuracy: true,
+    maxZoom: 18
 }).on("locationfound", e => {
-    if (!marker) {
-        marker = new L.marker(e.latlng).addTo(this.map);
+    if (!playerIcon) {
+        playerIcon = new L.marker(e.latlng).addTo(this.map);
     } else {
-        marker.setLatLng(e.latlng);
+        playerIcon.setLatLng(e.latlng);
     }
+
+    map.panTo(e.latlng);
 }).on("locationerror", error => {
-    if (marker) {
-        map.removeLayer(marker);
-        marker = undefined;
+    if (playerIcon) {
+        map.removeLayer(playerIcon);
+        playerIcon = undefined;
     }
 });
