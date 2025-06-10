@@ -1,7 +1,7 @@
 @media only screen and (orientation: landscape) {
     #map {
-        height: 18vh;
-        width: 18vh;
+        height: 25vh;
+        width: 25vh;
         top: 10px;
         right: 10px;
         position: absolute;
@@ -15,8 +15,8 @@
 
 @media only screen and (orientation: portrait) {
     #map {
-        height: 18vw;
-        width: 18vw;
+        height: 25vw;
+        width: 25vw;
         top: 10px;
         right: 10px;
         position: absolute;

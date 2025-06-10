@@ -22,8 +22,8 @@
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
         renderer='antialias: true; alpha: true'>
         <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-        <a-entity id="target_model" material='color: red' geometry='primitive: box'
-            gps-new-entity-place="latitude: -7.258388; longitude: 112.623741" scale="1 1 1"></a-entity>
+        <a-box id="target_model" color="green" gps-new-entity-place="latitude: -7.258388; longitude: 112.623741" depth="1"
+            height="1" width="1"></a-box>
     </a-scene>
 
     <div id="manual-marker-location">
