@@ -13,7 +13,7 @@ class RenderedMarker {
     }
 }
 
-var markers = [new RenderedMarker(new L.latLng(-7.258388, 112.623741), true)];
+var markers = [new RenderedMarker(new L.latLng(-7.258388, 112.623741), false)];
 
 
 const debug_space = document.getElementById('debug_space');
@@ -53,7 +53,7 @@ function manualLatLong() {
         y: 5,
         z: 5
     });
-    entity.setAttribute('material', { color: 'blue' });
+    entity.setAttribute('material', { color: 'green' });
     entity.setAttribute('gps-new-entity-place', {
         latitude: manual_lat,
         longitude: manual_long
