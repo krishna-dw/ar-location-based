@@ -20,8 +20,8 @@
 <body>
     <div id="map"></div>
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
-        renderer='antialias: true; alpha: true'>
-        <a-camera gps-new-camera='gpsMinDistance: 0.1; maxDistance: 2.0'></a-camera>
+        renderer='antialias: true; alpha: true; logarithmicDepthBuffer: true'>
+        <a-camera new-location-based='far: 2.0' gps-new-camera='gpsMinDistance: 0.1; maxDistance: 2.0'></a-camera>
     </a-scene>
 
     <div id="manual-marker-location">
