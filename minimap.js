@@ -12,7 +12,7 @@ map.locate({
     maxZoom: 18
 }).on("locationfound", e => {
     console.log(e);
-    if (e.accuracy <= 0.5) {
+    if (e.accuracy <= 1.0) {
         if (!playerIcon) {
             playerIcon = new L.marker(e.latlng).addTo(this.map);
         } else {
@@ -29,13 +29,20 @@ map.locate({
 });
 
 function manualLatLong() {
-    const model = document.getElementById('target_model');
+    const entity = document.createElement("a-box");
 
-    const manual_lat = document.getElementById('mml_latitude');
-    const manual_long = document.getElementById('mml_longitude');
+    const manual_lat = document.getElementById('mml_latitude').value;
+    const manual_long = document.getElementById('mml_longitude').value;
 
-    model.setAttribute('gps-new-entity-place', {
+    entity.setAttribute("scale", {
+        x: 5,
+        y: 5,
+        z: 5
+    });
+    entity.setAttribute('material', { color: 'blue' });
+    entity.setAttribute('gps-new-entity-place', {
         latitude: manual_lat,
         longitude: manual_long
     });
+    document.querySelector("a-scene").appendChild(entity);
 }

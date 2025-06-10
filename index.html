@@ -22,13 +22,14 @@
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false'
         renderer='antialias: true; alpha: true'>
         <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-        <a-box id="target_model" color="green" gps-new-entity-place="latitude: -7.258388; longitude: 112.623741" depth="1"
-            height="1" width="1"></a-box>
+        <a-box id="target_model" color="green" gps-new-entity-place="latitude: -7.258388; longitude: 112.623741"
+            depth="1" height="1" width="1"></a-box>
     </a-scene>
 
     <div id="manual-marker-location">
-        <input id="mml_latitude" type="text" onchange="manualLatLong()" value="-7.258388" />
-        <input id="mml_longitude" type="text" onchange="manualLatLong()" value="112.623741" />
+        <input id="mml_latitude" type="text" value="-7.258388" />
+        <input id="mml_longitude" type="text" value="112.623741" />
+        <button id="mml_add" type="button" onclick="manualLatLong()">ADD</button>
     </div>
 
     <script type='text/javascript' src="./minimap.js"></script>
