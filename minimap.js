@@ -53,7 +53,7 @@ function manualLatLong() {
         y: 5,
         z: 5
     });
-    entity.setAttribute('material', { color: 'green' });
+    entity.setAttribute('material', { color: 'yellow' });
     entity.setAttribute('gps-new-entity-place', {
         latitude: manual_lat,
         longitude: manual_long
