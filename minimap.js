@@ -10,7 +10,7 @@ var locTimes = 0;
 map.locate({
     setView: true,
     watch: true,
-    enableHighAccuracy: true,
+    // enableHighAccuracy: true,
     maxZoom: 18
 }).on("locationfound", e => {
     locTimes += 1;
