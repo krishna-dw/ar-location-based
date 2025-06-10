@@ -12,14 +12,14 @@ map.locate({
     maxZoom: 18
 }).on("locationfound", e => {
     console.log(e);
-    if (e.accuracy <= 1.0) {
+    if (e.accuracy <= 16.0) {
         if (!playerIcon) {
             playerIcon = new L.marker(e.latlng).addTo(this.map);
         } else {
             playerIcon.setLatLng(e.latlng);
         }
     } else {
-        alert(e.accuracy);
+        // alert(e.accuracy);
     }
 
     map.panTo(e.latlng);
