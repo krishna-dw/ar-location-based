@@ -11,10 +11,13 @@ map.locate({
     enableHighAccuracy: true,
     maxZoom: 18
 }).on("locationfound", e => {
-    if (!playerIcon) {
-        playerIcon = new L.marker(e.latlng).addTo(this.map);
-    } else {
-        playerIcon.setLatLng(e.latlng);
+    console.log(e);
+    if (e.accuracy <= 0.5) {
+        if (!playerIcon) {
+            playerIcon = new L.marker(e.latlng).addTo(this.map);
+        } else {
+            playerIcon.setLatLng(e.latlng);
+        }
     }
 
     map.panTo(e.latlng);
@@ -24,3 +27,15 @@ map.locate({
         playerIcon = undefined;
     }
 });
+
+function manualLatLong() {
+    const model = document.getElementById('target_model');
+
+    const manual_lat = document.getElementById('mml_latitude');
+    const manual_long = document.getElementById('mml_longitude');
+
+    model.setAttribute('gps-new-entity-place', {
+        latitude: manual_lat,
+        longitude: manual_long
+    });
+}

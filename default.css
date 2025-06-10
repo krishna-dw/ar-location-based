@@ -6,6 +6,11 @@
         right: 10px;
         position: absolute;
     }
+
+    #manual-marker-location {
+        width: 50vh;
+        height: auto;
+    }
 }
 
 @media only screen and (orientation: portrait) {
@@ -16,4 +21,23 @@
         right: 10px;
         position: absolute;
     }
+
+    #manual-marker-location {
+        width: 50vw;
+        height: auto;
+    }
+}
+
+#manual-marker-location {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#mml_latitude {
+    width: 100%;
+}
+
+#mml_longitude {
+    width: 100%;
 }
