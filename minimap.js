@@ -18,6 +18,8 @@ map.locate({
         } else {
             playerIcon.setLatLng(e.latlng);
         }
+    } else {
+        alert(e.accuracy);
     }
 
     map.panTo(e.latlng);
