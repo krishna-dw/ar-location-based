@@ -1,7 +1,7 @@
 #map {
-    height: 20vh;
-    width: 20vw;
-    top: 0;
-    right: 0;
+    height: 18vh;
+    width: 18vw;
+    top: 10px;
+    right: 10px;
     position:absolute;
 }
